@@ -22,7 +22,8 @@ Config.Shops = {
                 vector2(-31.292987823486, -1095.3717041016)
             },
             ['minZ'] = 25.0,  -- min height of the shop zone
-            ['maxZ'] = 28.0  -- max height of the shop zone
+            ['maxZ'] = 28.0,  -- max height of the shop zone
+            debug = true
         },
         ['Job'] = 'none', -- Name of job or none
         ['ShopLabel'] = 'Premium Deluxe Motorsport', -- Blip name
@@ -86,29 +87,32 @@ Config.Shops = {
             }
         },
     },
-   ['luxury'] = {
-        ['Type'] = 'managed',  -- meaning a real player has to sell the car
+   ['import'] = {
+        ['Type'] = 'free-use',  -- meaning a real player has to sell the car
         ['Zone'] = {
             ['Shape'] = {
-                vector2(-1260.6973876953, -349.21334838867),
-                vector2(-1268.6248779297, -352.87365722656),
-                vector2(-1274.1533203125, -358.29794311523),
-                vector2(-1273.8425292969, -362.73715209961),
-                vector2(-1270.5701904297, -368.6716003418),
-                vector2(-1266.0561523438, -375.14080810547),
-                vector2(-1244.3684082031, -362.70278930664),
-                vector2(-1249.8704833984, -352.03326416016),
-                vector2(-1252.9503173828, -345.85726928711)
+                vector2(-1266.06, -375.14),
+                vector2(-1272.94, -362.49),
+                vector2(-1273.5, -359.45),
+                vector2(-1272.61, -356.64),
+                vector2(-1270.27, -354.62),
+                vector2(-1252.96, -345.85),
+                vector2(-1233.72, -337.94),
+                vector2(-1226.36, -352.37),
             },
             ['minZ'] = 36.646457672119,
             ['maxZ'] = 37.516143798828
         },
-        ['Job'] = 'cardealer', -- Name of job or none
-        ['ShopLabel'] = 'Luxury Vehicle Shop',
+        ['Job'] = 'none', -- Name of job or none
+        ['ShopLabel'] = 'Import Vehicle Shop',
         ['showBlip'] = true,  --- true or false
         ['Categories'] = {
-            ['super'] = 'Super',
-            ['sports'] = 'Sports'
+            ['importmuscle'] = 'Muscles',
+            ['importtruck'] = 'Trucks',
+            ['importsuv'] = 'SUVs',
+            ['importsport'] = 'Sports',
+            ['importmotorcycle'] = 'Motorcycles',
+            ['importsedan'] = 'Sedans'
         },
         ['TestDriveTimeLimit'] = 0.5,
         ['Location'] = vector3(-1255.6, -361.16, 36.91),
@@ -117,33 +121,33 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-1265.31, -354.44, 36.91 - 1.0, 205.08),
-                defaultVehicle = 'italirsx',
-                chosenVehicle = 'italirsx',
+                defaultVehicle = '95stang',
+                chosenVehicle = '95stang',
             },
             [2] = {
                 coords = vector4(-1270.06, -358.55, 36.91 - 1.0, 247.08),
-                defaultVehicle = 'italigtb',
-                chosenVehicle = 'italigtb',
+                defaultVehicle = 'chevelle67',
+                chosenVehicle = 'chevelle67',
             },
             [3] = {
                 coords = vector4(-1269.21, -365.03, 36.91 - 1.0, 297.12),
-                defaultVehicle = 'nero',
-                chosenVehicle = 'nero',
+                defaultVehicle = 'mustang2005gt',
+                chosenVehicle = 'mustang2005gt',
             },
             [4] = {
                 coords = vector4(-1252.07, -364.2, 36.91, 56.44),
-                defaultVehicle = 'bati',
-                chosenVehicle = 'bati',
+                defaultVehicle = '21camaro',
+                chosenVehicle = '21camaro',
             },
             [5] = {
                 coords = vector4(-1255.49, -365.91, 36.91, 55.63),
-                defaultVehicle = 'carbonrs',
-                chosenVehicle = 'carbonrs',
+                defaultVehicle = 'cam08',
+                chosenVehicle = 'cam08',
             },
             [6] = {
                 coords = vector4(-1249.21, -362.97, 36.91, 53.24),
-                defaultVehicle = 'hexer',
-                chosenVehicle = 'hexer',
+                defaultVehicle = 'eclipse',
+                chosenVehicle = 'eclipse',
             },
         }
     } -- Add your next table under this comma
