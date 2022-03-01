@@ -112,9 +112,10 @@ Config.Shops = {
             ['importsuv'] = 'SUVs',
             ['importsport'] = 'Sports',
             ['importmotorcycle'] = 'Motorcycles',
-            ['importsedan'] = 'Sedans'
+            ['importsedan'] = 'Sedans',
+            ['importowners'] = 'Owners ONLY!',
         },
-        ['TestDriveTimeLimit'] = 0.5,
+        ['TestDriveTimeLimit'] = 3.0,
         ['Location'] = vector3(-1255.6, -361.16, 36.91),
         ['ReturnLocation'] = vector3(-1231.46, -349.86, 37.33),
         ['VehicleSpawn'] = vector4(-1231.46, -349.86, 37.33, 26.61),
