@@ -87,7 +87,7 @@ Config.Shops = {
             }
         },
     },
-   ['import'] = {
+    ['import'] = {
         ['Type'] = 'free-use',  -- meaning a real player has to sell the car
         ['Zone'] = {
             ['Shape'] = {
@@ -151,5 +151,47 @@ Config.Shops = {
                 chosenVehicle = 'eclipse',
             },
         }
-    } -- Add your next table under this comma
+    }, -- Add your next table under this comma
+    ['police'] = {
+        ['Type'] = 'free-use',  -- meaning a real player has to sell the car
+        ['Zone'] = {
+            ['Shape'] = {
+                vector2(-1266.06, -375.14),
+                vector2(-1272.94, -362.49),
+                vector2(-1273.5, -359.45),
+                vector2(-1272.61, -356.64),
+                vector2(-1270.27, -354.62),
+                vector2(-1252.96, -345.85),
+                vector2(-1233.72, -337.94),
+                vector2(-1226.36, -352.37),
+            },
+            ['minZ'] = 24.50,
+            ['maxZ'] = 27.25
+        },
+        ['Job'] = 'police', -- Name of job or none
+        ['ShopLabel'] = 'Police Shop',
+        ['showBlip'] = false,  --- true or false
+        ['Categories'] = {
+            ['lspd'] = 'LSPD',
+            ['bcso'] = 'BCSO',
+            ['sast'] = 'SAST',
+            ['ss'] = 'Secret Service',
+        },
+        ['TestDriveTimeLimit'] = 3.0,
+        ['Location'] = vector3(450.36, -976.15, 25.25),
+        ['ReturnLocation'] = vector3(450.36, -976.15, 25.25),
+        ['VehicleSpawn'] = vector4(450.36, -976.15, 25.25, 89.51),
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(445.55, -997.16, 25.25, 269.96),
+                defaultVehicle = 'valor1bb',
+                chosenVehicle = 'valor1bb',
+            },
+            [2] = {
+                coords = vector4(445.58, -994.21, 25.26, 270.64),
+                defaultVehicle = 'valor15bb',
+                chosenVehicle = 'valor15bb',
+            },
+        }
+    }
 }
