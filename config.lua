@@ -1,5 +1,5 @@
 Config = {}
-Config.UsingTarget = false -- If you are using qb-target (uses entity zones to target vehicles)
+Config.UsingTarget = true -- If you are using qb-target (uses entity zones to target vehicles)
 Config.Commission = 0.10 -- Percent that goes to sales person from a full car sale 10%
 Config.FinanceCommission = 0.05 -- Percent that goes to sales person from a finance sale 5%
 Config.FinanceZone = vector3(-29.53, -1103.67, 26.42) -- Where the finance menu is located
@@ -153,45 +153,44 @@ Config.Shops = {
         }
     }, -- Add your next table under this comma
     ['police'] = {
-        ['Type'] = 'free-use',  -- meaning a real player has to sell the car
+        ['Type'] = 'police',
         ['Zone'] = {
             ['Shape'] = {
-                vector2(-1266.06, -375.14),
-                vector2(-1272.94, -362.49),
-                vector2(-1273.5, -359.45),
-                vector2(-1272.61, -356.64),
-                vector2(-1270.27, -354.62),
-                vector2(-1252.96, -345.85),
-                vector2(-1233.72, -337.94),
-                vector2(-1226.36, -352.37),
+                vector2(442.52935791016, -1000.2854003906),
+                vector2(442.38027954102, -998.75738525391),
+                vector2(440.76385498047, -998.56372070312),
+                vector2(440.86456298828, -987.76434326172),
+                vector2(442.24685668945, -987.67181396484),
+                vector2(442.61465454102, -984.81872558594),
+                vector2(463.69818115234, -983.64501953125),
+                vector2(463.77966308594, -995.27038574219),
+                vector2(462.16796875, -995.15728759766),
+                vector2(461.93978881836, -1000.6303100586)
             },
             ['minZ'] = 24.50,
-            ['maxZ'] = 27.25
+            ['maxZ'] = 27.25,
+
         },
         ['Job'] = 'police', -- Name of job or none
-        ['ShopLabel'] = 'Police Shop',
-        ['showBlip'] = false,  --- true or false
+        ['ShopLabel'] = 'Police Vehicleshop',
+        ['showBlip'] = true,  --- true or false
         ['Categories'] = {
-            ['lspd'] = 'LSPD',
+            ['lspd'] = 'Los Santos PD',
             ['bcso'] = 'BCSO',
             ['sast'] = 'SAST',
             ['ss'] = 'Secret Service',
         },
         ['TestDriveTimeLimit'] = 3.0,
-        ['Location'] = vector3(450.36, -976.15, 25.25),
-        ['ReturnLocation'] = vector3(450.36, -976.15, 25.25),
-        ['VehicleSpawn'] = vector4(450.36, -976.15, 25.25, 89.51),
+        ['Location'] = vector3(458.36, -992.41, 25.39),
+        ['ReturnLocation'] = vector3(458.36, -992.41, 25.39),
+        ['VehicleSpawn'] = vector4(458.36, -992.41, 25.39, 359.64),
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(445.55, -997.16, 25.25, 269.96),
                 defaultVehicle = 'valor1bb',
                 chosenVehicle = 'valor1bb',
             },
-            [2] = {
-                coords = vector4(445.58, -994.21, 25.26, 270.64),
-                defaultVehicle = 'valor15bb',
-                chosenVehicle = 'valor15bb',
-            },
-        }
-    }
+            
+        },
+    },
 }

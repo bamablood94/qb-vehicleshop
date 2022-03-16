@@ -183,7 +183,7 @@ local function createVehZones(shopName) -- This will create an entity zone if co
                 debugPoly=false,
             })
         end
-        local combo = ComboZone:Create(zones, {name = "vehCombo", debugPoly = false})
+        local combo = ComboZone:Create(zones, {name = "vehCombo", debugPoly = true})
         combo:onPlayerInOut(function(isPointInside)
             local insideShop = getShopInsideOf()
             if isPointInside then
@@ -216,7 +216,55 @@ local function createVehZones(shopName) -- This will create an entity zone if co
     end
 end
 
+
 -- Zones
+
+function createPoliceShop(shopShape, name)
+    local zone = PolyZone:Create(shopShape, {  -- create the zone
+        name= name,
+        minZ = shopShape.minZ,
+        maxZ = shopShape.maxZ
+    })
+
+    zone:onPlayerInOut(function(isPointInside)
+        if isPointInside then
+            insideZones[name] = true
+            CreateThread(function()
+                while insideZones[name] and PlayerData.job ~= nil and PlayerData.job.name == Config.Shops[name]['Job'] do
+                    setClosestShowroomVehicle()
+                    vehicleMenu = {
+                        {
+                            isMenuHeader = true,
+                            header = getVehBrand():upper().. ' '..getVehName():upper().. ' - $' ..getVehPrice(),
+                        },
+                        {
+                            header = "Buy Vehicle",
+                            txt = 'Purchase currently selected vehicle',
+                            params = {
+                                isServer = true,
+                                event = 'qb-vehicleshop:server:buyShowroomVehicle',
+                                args = {
+                                    buyVehicle = Config.Shops[getShopInsideOf()]["ShowroomVehicles"][ClosestVehicle].chosenVehicle
+                                }
+                            }
+                        },
+                        {
+                            header = 'Swap Vehicle',
+                            txt = 'Change currently selected vehicle',
+                            params = {
+                                event = 'qb-vehicleshop:client:vehCategories',
+                            }
+                        },
+                    }
+                    Wait(1000)
+                end
+            end)
+        else
+            insideZones[name] = false -- leave the shops zone
+            ClosestVehicle = 1
+        end
+    end)
+end
 
 function createFreeUseShop(shopShape, name)
     local zone = PolyZone:Create(shopShape, {  -- create the zone
@@ -358,6 +406,8 @@ for name, shop in pairs(Config.Shops) do
         createFreeUseShop(shop['Zone']['Shape'], name)
     elseif shop['Type'] == 'managed' then
         createManagedShop(shop['Zone']['Shape'], name)
+    elseif shop['Type'] == 'police' then
+        createPoliceShop(shop['Zone']['Shape'], name)
     end
 end
 
